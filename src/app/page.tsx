@@ -42,7 +42,7 @@ export default function Home() {
             transition={{ delay: 0.6, duration: 0.5 }}
           >
             <Link
-              href="/simulation"
+              href="https://simulation-three-beryl.vercel.app/"
               className="group inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-neon-cyan transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(0,243,255,0.5)]"
             >
               Launch Simulation

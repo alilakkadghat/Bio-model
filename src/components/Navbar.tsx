@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 
 const navItems = [
-  { name: "Simulation", path: "/simulation" },
+  { name: "Simulation", path: "https://simulation-three-beryl.vercel.app/" },
   { name: "Presentation", path: "/presentation" },
   { name: "Research", path: "/research" },
   { name: "Credits", path: "/credits" },
@@ -19,7 +19,7 @@ export default function Navbar() {
       <div className="text-xl font-bold tracking-tighter text-neon-cyan drop-shadow-[0_0_5px_rgba(0,243,255,0.5)]">
         <Link href="/">BIO-DEFENSE</Link>
       </div>
-      
+
       <div className="flex gap-8">
         {navItems.map((item) => {
           const isActive = pathname.startsWith(item.path);
@@ -43,7 +43,7 @@ export default function Navbar() {
           );
         })}
       </div>
-      
+
       <div className="w-20">
         {/* Placeholder for right side element or balancing */}
       </div>

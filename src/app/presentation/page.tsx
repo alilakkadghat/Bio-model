@@ -1,20 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
+import { motion } from "framer-motion";
+import { Maximize2, X } from "lucide-react";
 
 const presentations = [
     {
         id: 1,
         title: "Ant Colony Optimization Algorithm",
         description: "Bio-inspired probabilistic technique for solving computational problems which can be reduced to finding good paths through graphs.",
-        type: "slides",
-        slides: [
-            { id: 1, content: "Ant Colony Optimization: Introduction" },
-            { id: 2, content: "Pheromone Trails & Reinforcement Learning" },
-            { id: 3, content: "Application in Network Routing" }
-        ],
+        type: "pdf",
+        src: "/ANT COLONY OPTIMIZATION ALGORITHM_opt2.1.pdf",
         color: "neon-cyan"
     },
     {
@@ -22,37 +18,21 @@ const presentations = [
         title: "Slime Mold Algorithm",
         description: "Population-based metaheuristic algorithm inspired by the diffusion and behavior of slime mold in nature.",
         type: "pdf",
-        src: "/1st%20try.pdf",
-        color: "neon-magenta",
-        slides: [] // Overridden by PDF
+        src: "/SlimeMoldAlgorithm.pdf",
+        color: "neon-magenta"
     }
 ];
 
 export default function PresentationPage() {
     const [activePresentation, setActivePresentation] = useState<number | null>(null);
-    const [currentSlide, setCurrentSlide] = useState(0);
+
 
     const openPresentation = (id: number) => {
         setActivePresentation(id);
-        setCurrentSlide(0);
     };
 
     const closePresentation = () => {
         setActivePresentation(null);
-    };
-
-    const nextSlide = () => {
-        const pres = presentations.find(p => p.id === activePresentation);
-        if (pres && pres.type === 'slides') {
-            setCurrentSlide(prev => (prev + 1) % pres.slides.length);
-        }
-    };
-
-    const prevSlide = () => {
-        const pres = presentations.find(p => p.id === activePresentation);
-        if (pres && pres.type === 'slides') {
-            setCurrentSlide(prev => (prev - 1 + pres.slides.length) % pres.slides.length);
-        }
     };
 
     const currentPres = presentations.find(p => p.id === activePresentation);
@@ -96,44 +76,13 @@ export default function PresentationPage() {
 
                     <div className="flex-1 flex items-center justify-center bg-gray-950 relative overflow-hidden">
 
-                        {currentPres?.type === 'pdf' ? (
-                            <div className="w-full h-full p-4">
-                                <iframe
-                                    src={currentPres.src}
-                                    className="w-full h-full rounded-lg border border-gray-700"
-                                    title="PDF Viewer"
-                                />
-                            </div>
-                        ) : (
-                            <>
-                                {/* Slide Mock */}
-                                <motion.div
-                                    key={currentSlide}
-                                    initial={{ opacity: 0, x: 100 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -100 }}
-                                    className="w-[80%] aspect-video bg-white text-black flex flex-col items-center justify-center rounded-xl shadow-2xl p-10 text-center"
-                                >
-                                    <h3 className="text-4xl font-bold mb-4">Slide {currentSlide + 1}</h3>
-                                    <p className="text-2xl text-gray-600">{currentPres?.slides[currentSlide].content}</p>
-                                    <div className="mt-10 p-4 bg-gray-100 rounded text-sm text-gray-500">
-                                        [Placeholder for Slide Image/Content]
-                                    </div>
-                                </motion.div>
-
-                                {/* Controls */}
-                                <button onClick={prevSlide} className="absolute left-10 p-4 bg-white/10 hover:bg-white/20 backdrop-blur rounded-full text-white transition-all">
-                                    <ChevronLeft className="w-8 h-8" />
-                                </button>
-                                <button onClick={nextSlide} className="absolute right-10 p-4 bg-white/10 hover:bg-white/20 backdrop-blur rounded-full text-white transition-all">
-                                    <ChevronRight className="w-8 h-8" />
-                                </button>
-
-                                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 px-4 py-2 bg-black/50 rounded-full text-white font-mono">
-                                    Slide {currentSlide + 1} / {currentPres?.slides.length}
-                                </div>
-                            </>
-                        )}
+                        <div className="w-full h-full p-4">
+                            <iframe
+                                src={currentPres?.src}
+                                className="w-full h-full rounded-lg border border-gray-700"
+                                title="PDF Viewer"
+                            />
+                        </div>
                     </div>
                 </div>
             )}
