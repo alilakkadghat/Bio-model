@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Activity, Network } from "lucide-react";
+import BioNetworkBackground from "../components/BioNetworkBackground";
 
 export default function Home() {
   return (
@@ -10,11 +11,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden">
 
-        {/* Abstract Background Animation Placeholder */}
-        <div className="absolute inset-0 z-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-neon-cyan/30 rounded-full blur-[100px] animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-magenta/30 rounded-full blur-[100px] animate-pulse delay-1000" />
-        </div>
+        {/* 3D Background */}
+        <BioNetworkBackground />
 
         <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
           <motion.div
@@ -52,47 +50,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="py-24 bg-gray-900/50 border-t border-white/10">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-12">
-
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="p-8 rounded-2xl bg-black border border-white/10 hover:border-neon-cyan/50 transition-colors"
-            >
-              <Activity className="w-12 h-12 text-neon-cyan mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Hunter-Killer Swarms</h3>
-              <p className="text-gray-400">
-                Deploy autonomous digital ants that patrol networks, detect anomalies via pheromone trails, and neutralize malware threats in real-time.
-              </p>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="p-8 rounded-2xl bg-black border border-white/10 hover:border-neon-magenta/50 transition-colors"
-            >
-              <Shield className="w-12 h-12 text-neon-magenta mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Digital Quarantine</h3>
-              <p className="text-gray-400">
-                Utilize cellular automata logic to dynamically construct firewalls, isolating infected nodes to prevent viral propagation across the grid.
-              </p>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ y: -10 }}
-              className="p-8 rounded-2xl bg-black border border-white/10 hover:border-neon-amber/50 transition-colors"
-            >
-              <Network className="w-12 h-12 text-neon-amber mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Patch Propagation</h3>
-              <p className="text-gray-400">
-                Simulate the race between exponential malware spread and bio-inspired patch dissemination strategies across large-scale city networks.
-              </p>
-            </motion.div>
-
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
