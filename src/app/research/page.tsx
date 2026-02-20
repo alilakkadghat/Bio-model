@@ -4,25 +4,25 @@ export default function ResearchPage() {
             title: "Ant Colony Optimization: A New Bio-Inspired Approach for Network Routing",
             description: "This paper explores the application of ACO algorithms for dynamic routing in telecommunication networks, highlighting its adaptability and robustness.",
             category: "ACO in Cybersecurity",
-            link: "https://ieeexplore.ieee.org/document/1234567"
+            link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11491779/"
         },
         {
             title: "Bio-Inspired Cyber Security for Smart Grid",
             description: "A comprehensive review of bio-inspired techniques including Swarm Intelligence for securing critical infrastructure.",
             category: "Bio-Inspired Networks",
-            link: "https://arxiv.org/abs/1234.5678"
+            link: "https://www.researchgate.net/figure/Horizontal-and-vertical-traverse-scans_fig5_282175661"
         },
         {
             title: "Slime Mould Algorithm: A New Method for Stochastic Optimization",
             description: "The foundational paper proposing the Slime Mould Algorithm (SMA) and demonstrating its effectiveness in various optimization problems.",
             category: "Slime Mold Optimization",
-            link: "https://www.sciencedirect.com/science/article/pii/S095070512030000X"
+            link: "https://www.sciencedirect.com/science/article/pii/S2405844023042500"
         },
         {
             title: "Digital Ants for Malware Detection",
             description: "Research on using 'digital ants' agents that wander a network to detect anomalies, inspired by real-world ant behavior.",
             category: "ACO in Cybersecurity",
-            link: "#"
+            link: "https://www.scientificamerican.com/blog/observations/software-mimics-ant-behavior-by-swarming-against-cyber-threats/"
         }
     ];
 
