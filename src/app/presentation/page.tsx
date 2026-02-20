@@ -18,7 +18,7 @@ const presentations = [
         title: "Slime Mold Algorithm",
         description: "Population-based metaheuristic algorithm inspired by the diffusion and behavior of slime mold in nature.",
         type: "pdf",
-        src: "/SlimeMoldAlgorithm.pdf",
+        src: "/BIO-SMAE.pdf",
         color: "neon-magenta"
     }
 ];
